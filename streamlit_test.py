@@ -9,10 +9,10 @@ import altair as alt
 st.set_page_config(page_title='Disposição do estoque', page_icon=':bar_chart:', layout='wide')
 
 # Configurando os dados
-dados = pd.read_csv('dados/analise_rack.csv')
-dados_curva = pd.read_csv('dados/curva_vlr_qtd.csv')
-produtos_tempo = pd.read_csv('dados/produtos_no_tempo.csv')
-total_produtos_tempo = pd.read_csv('dados/total_produtos_no_tempo.csv')
+dados = pd.read_csv('dados_csv/analise_rack.csv')
+dados_curva = pd.read_csv('dados_csv/curva_vlr_qtd.csv')
+produtos_tempo = pd.read_csv('dados_csv/produtos_no_tempo.csv')
+total_produtos_tempo = pd.read_csv('dados_csv/total_produtos_no_tempo.csv')
 
 # Criando a barra lateral
 with st.sidebar:
