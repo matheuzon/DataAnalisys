@@ -79,7 +79,7 @@ see_scatter_pos = st.expander('Visualizar distribuição das posições do estoq
 with see_scatter_pos:
     st.plotly_chart(fig_plotly, use_container_width=True)
 
-fig_percentual_valor = px.bar(dados_selecionados_curva.sort_values(by='percentual_valor', ascending=False), orientation='h', y='Material', x='percentual_valor',color='curva_valor' , height=700, hover_data=['qtd_total', 'valor_total'], title='Curva de itens')
+fig_percentual_valor = px.bar(dados_selecionados_curva.sort_values(by='percentual_valor', ascending=False), orientation='h', y='Material', x='percentual_valor',color='curva_valor' , text='percentual_valor', height=700, hover_data=['qtd_total', 'valor_total'], title='Curva de itens')
 fig_percentual_valor.update_xaxes(title_text='Material', title_font={'size':14}, showgrid=False)
 fig_percentual_valor.update_yaxes(title_text='Percentual', title_font={'size':14}, showgrid=False)
 
@@ -88,6 +88,7 @@ see_scatter_valor = st.expander('Visualizar gráfico de barras por valor em esto
 with see_scatter_valor:
     st.plotly_chart(fig_percentual_valor, use_container_width=True)
 
+'''
 if produto != "":
     analise_item = produtos_tempo.query('produto == @produto')['label_data'].value_counts()
     analise_item = analise_item.to_frame().reset_index()
@@ -103,6 +104,7 @@ if produto != "":
 
     with see_scatter_produto_tempo:
         st.plotly_chart(fig_percentual_produto_tempo, use_container_width=True)
+'''
 
 st.markdown('---')
 
@@ -116,6 +118,7 @@ with see_dataframe_pos:
 with see_dataframe_curva:
     st.dataframe(dados_selecionados_curva.reset_index(drop=True))
 
+'''
 if produto == "":
     with see_total_produtos_tempo:
         st.dataframe(produtos_tempo.reset_index(drop=True))
@@ -123,3 +126,4 @@ else:
     with see_total_produtos_tempo:
         st.write()
         st.dataframe(analise_item.reset_index(drop=True))
+'''

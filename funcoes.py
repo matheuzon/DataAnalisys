@@ -181,7 +181,7 @@ def curva_abc(mon, mb52, gravacao = False):
         texto =  'curva_combinada gerada com gravação'
         return texto
     else:
-        curva_combinada.to_csv('dados/curva_combinada.csv', sep=',', index=False)
+        curva_combinada.to_csv('dados_csv/curva_combinada.csv', sep=',', index=False)
         texto =  'curva_combinada gerada sem gravação'
         return texto
 
